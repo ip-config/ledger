@@ -16,6 +16,7 @@
 //
 //------------------------------------------------------------------------------
 
+#include "metrics/metrics.hpp"
 #include "ledger/storage_unit/transaction_store_sync_protocol.hpp"
 #include "ledger/chain/transaction_serialization.hpp"
 
@@ -25,13 +26,6 @@ using fetch::storage::ResourceID;
 #ifdef FETCH_ENABLE_METRICS
 using fetch::metrics::Metrics;
 using fetch::metrics::MetricHandler;
-
-static void RecordNewElement(ConstByteArray const &identifier)
-{
-  // record the event
-  Metrics::Instance().RecordMetric(identifier, MetricHandler::Instrument::TRANSACTION,
-                                   MetricHandler::Event::SYNCED);
-}
 
 static void RecordNewCacheElement(ConstByteArray const &identifier)
 {

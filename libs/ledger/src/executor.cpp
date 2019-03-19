@@ -135,7 +135,7 @@ Executor::Status Executor::Execute(TxDigest const &hash, std::size_t slice, Lane
     FETCH_LOG_DEBUG(LOGGING_NAME, "Executing tx ", byte_array::ToBase64(hash), " (success)");
 
     FETCH_METRIC_TX_EXEC_STARTED_EX(hash, started);
-    FETCH_METRIC_TX_EXEC_COMPLETE_EX(hash, completed)
+    FETCH_METRIC_TX_EXEC_COMPLETE_EX(hash, completed);
 
     return status;
   }

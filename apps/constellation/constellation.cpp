@@ -17,6 +17,7 @@
 //------------------------------------------------------------------------------
 
 #include "constellation.hpp"
+#include "metrics/metrics.hpp"
 #include "http/middleware/allow_origin.hpp"
 #include "ledger/chain/consensus/bad_miner.hpp"
 #include "ledger/chain/consensus/dummy_miner.hpp"
@@ -376,6 +377,7 @@ void Constellation::Run(UriList const &initial_peers)
 
 void Constellation::OnBlock(ledger::Block const &block)
 {
+  FETCH_METRIC_BLOCK_GENERATED(block.body.hash);
   main_chain_service_->BroadcastBlock(block);
 }
 
