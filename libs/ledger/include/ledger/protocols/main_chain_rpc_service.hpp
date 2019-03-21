@@ -54,11 +54,9 @@ public:
   };
 
   using MuddleEndpoint  = muddle::MuddleEndpoint;
-  using MainChain       = ledger::MainChain;
   using Subscription    = muddle::Subscription;
   using SubscriptionPtr = std::shared_ptr<Subscription>;
   using Address         = muddle::Packet::Address;
-  using Block           = ledger::Block;
   using BlockHash       = Block::Digest;
   using Promise         = service::Promise;
   using RpcClient       = muddle::rpc::Client;

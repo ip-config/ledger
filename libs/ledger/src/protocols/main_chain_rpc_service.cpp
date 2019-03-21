@@ -94,7 +94,7 @@ MainChainRpcService::~MainChainRpcService()
   state_machine_.reset();
 }
 
-void MainChainRpcService::BroadcastBlock(MainChainRpcService::Block const &block)
+void MainChainRpcService::BroadcastBlock(Block const &block)
 {
   FETCH_LOG_DEBUG(LOGGING_NAME, "Broadcast Block: ", ToBase64(block.hash()));
 
